@@ -6,15 +6,19 @@ html{
     box-sizing: border-box;
 }
 
-.wrapper{
+.wrapper,.container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 36rem;
+    max-width: 41rem;
     height: fit-content;
     margin: 4rem auto;
     box-shadow: 0 8px 10px rgba(0,0,0,0.4);
+}
+
+.container{
+    height: 80%;
 }
 
 .name{
@@ -55,6 +59,74 @@ button:active,button:focus{
     transform: translateY(0);
 }
 
-@keyframes buttonClick{
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 2rem;
+    background-color: black;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+    color: white;
+}
 
+.res{
+    margin-right: 2px;
+    border-right: 1px solid white;
+}
+
+.time{
+    margin-left: 2px;
+}
+
+.reset{
+    padding: 2px;
+    background-color: rgb(2, 10, 29);
+}
+
+.towers{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    padding-top: 3rem;
+}
+
+.tower-1,.tower-2,.tower-3{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 20rem;
+    width: 25rem;
+    margin: 1rem 2px;
+    box-shadow: 5px 5px 9px rgba(0,0,0,0.4);
+    padding: 0;
+}
+
+.div1,.div2,.div3,.div4,.div5{
+    background-color: #195FC0;
+    width: 5rem;
+    height: 1.7rem;
+}
+.div2{
+    background-color: #AD5DBE;
+    width: 9rem;
+}
+
+.div3{
+    background-color: #F865A0;
+    width: 11rem;
+}
+
+.div4{
+    background-color: #FF8A79;
+    width: 13rem;
+}
+
+.div5{
+    background-color: #FFC060;
+    width: 15rem;
 }
