@@ -56,8 +56,9 @@ let tower2 = createCustomElement('tower-2','div');
 let tower3 = createCustomElement('tower-3','div');
 towers.append(tower1,tower2,tower3);
 
-for(let i=1;i<=5;i++){
-    let d  =createCustomElement(`div${i}`,'div');
+for(let i=1;i<=3;i++){
+    let d  = createCustomElement(`div${i}`,'div');
+    d.setAttribute("id",i);
     tower1.appendChild(d);
 }
 
@@ -77,9 +78,150 @@ playBtn.addEventListener('click',function(){
         timeDiv.innerText = sec;
     },1000);
     
-    if(sec<=0)
-        alert("Time up");
-    
+    let t = null;
+
+    tower1.addEventListener('click',function(){
+        if(t!==null && t!=tower1.firstChild){
+            let n = tower1.childElementCount;
+            
+            if(n>0){
+                let top = parseInt(tower1.firstChild.getAttribute("id"));
+                let tn = parseInt(t.getAttribute("id"));
+                if(tn<top){
+                    
+                    let childrenNodes = tower1.children;
+                    if(childrenNodes.length===2){
+                        let fc = tower1.firstChild;
+                        let lc = tower1.lastChild;
+                        tower1.childNodes = null;
+                        tower1.append(t);
+                        t.style.marginBottom = "0px";
+                        t=null;
+                        tower1.append(fc);
+                        tower1.append(lc);
+                    }else if(childrenNodes.length===1){
+                        let fc = tower1.firstChild;
+                        tower1.childNodes = null;
+                        tower1.appendChild(t);
+                        tower1.appendChild(fc);
+                        t.style.marginBottom = "0px";
+                        t=null;
+                        fc=null;
+                    }else{
+                        tower1.appendChild(t);
+                        t.style.marginBottom = "0px";
+                        t=null
+                    }
+                }else{
+                    t.marginBottom = "0px";
+                    t=null;
+                }
+            }else{
+                tower1.appendChild(t);
+                t.style.marginBottom = "0px";
+                t=null;
+            }
+        }else if(t===null){
+            t = tower1.firstChild;
+            t.style.marginBottom = "10px";
+        }
+        
+    });
+
+    tower2.addEventListener('click',function(){
+        if(t!==null && t!=tower2.firstChild){
+            let n = tower2.childElementCount;
+            console.log(n);
+            if(n>0){
+                let top = parseInt(tower2.firstChild.getAttribute("id"));
+                let tn = parseInt(t.getAttribute("id"));
+                if(tn<top){
+                    
+                    let childrenNodes = tower2.children;
+                    if(childrenNodes.length===2){
+                        let fc = tower2.firstChild;
+                        let lc = tower2.lastChild;
+                        tower2.childNodes = null;
+                        tower2.append(t);
+                        t.style.marginBottom = "0px";
+                        t=null;
+                        tower2.append(fc);
+                        tower2.append(lc);
+                    }else if(childrenNodes.length===1){
+                        let fc = tower2.firstChild;
+                        tower2.childNodes = null;
+                        tower2.appendChild(t);
+                        tower2.appendChild(fc);
+                        t.style.marginBottom = "0px";
+                        t=null;
+                        fc=null;
+                    }else{
+                        tower2.appendChild(t);
+                        t.style.marginBottom = "0px";
+                        t=null
+                    }
+                }else{
+                    console.log("LARGE");
+                    t.marginBottom = "0px";
+                    t=null;
+                }
+            }else{
+                tower2.appendChild(t);
+                t.style.marginBottom = "0px";
+                t=null;
+            }
+        }else if(t===null){
+            t = tower2.firstChild;
+            t.style.marginBottom = "10px";
+        }
+        
+    });
+
+    tower3.addEventListener('click',function(){
+        if(t!==null && t!=tower3.firstChild){
+            let n = tower3.childElementCount;
+            if(n>0){
+                let top = parseInt(tower3.firstChild.getAttribute("id"));
+                let tn = parseInt(t.getAttribute("id"));
+                if(tn<top){
+                    
+                    let childrenNodes = tower3.children;
+                    if(childrenNodes.length===2){
+                        let fc = tower3.firstChild;
+                        let lc = tower3.lastChild;
+                        tower3.childNodes = null;
+                        tower3.append(t);
+                        t.style.marginBottom = "0px";
+                        t=null;
+                        tower3.append(fc);
+                        tower3.append(lc);
+                    }else if(childrenNodes.length===1){
+                        let fc = tower3.firstChild;
+                        tower3.childNodes = null;
+                        tower3.appendChild(t);
+                        tower3.appendChild(fc);
+                        t.style.marginBottom = "0px";
+                        t=null;
+                        fc=null;
+                    }else{
+                        tower3.appendChild(t);
+                        t.style.marginBottom = "0px";
+                        t=null
+                    }
+                }else{
+                    t.marginBottom = "0";
+                    t=null;
+                }
+            }else{
+                tower3.appendChild(t);
+                t.style.marginBottom = "0px";
+                t=null;
+            }
+        }else if(t===null){
+            t = tower3.firstChild;
+            t.style.marginBottom = "10px";
+        }
+    });
 });
 //-------------UTILITIES------------------------
 function createCustomElement(className,type){
