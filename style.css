@@ -107,12 +107,12 @@ button:active,button:focus{
 }
 
 .div1,.div2,.div3,.div4,.div5{
-    background-color: #195FC0;
+    background-color: #FFC060;
     width: 5rem;
-    height: 1.7rem;
+    height: 2rem;
 }
 .div2{
-    background-color: #AD5DBE;
+    background-color: #FF8A79;
     width: 9rem;
 }
 
@@ -122,11 +122,22 @@ button:active,button:focus{
 }
 
 .div4{
-    background-color: #FF8A79;
+    background-color: #AD5DBE;
     width: 13rem;
 }
 
 .div5{
-    background-color: #FFC060;
+    background-color: #195FC0;
     width: 15rem;
 }
+
+.div1:hover{
+    margin-bottom: 2px;
+    transform: scale(1.1);
+}
+
+.div2:hover,.div3:hover,.div4:hover,.div5:hover{
+    margin: 2px 0;
+    transform: scale(1.1);
+}
+
