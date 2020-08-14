@@ -144,3 +144,25 @@ button:active,button:focus{
 .hover{
     margin-bottom: 2rem;
 }
+
+@media screen and (min-wdth: 700px){
+    html {
+        font-size: 12px;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: fit-content;
+        height: fit-content;
+    }
+
+    .towers{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+}

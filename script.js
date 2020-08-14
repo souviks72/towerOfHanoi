@@ -35,6 +35,8 @@ rulesDiv.appendChild(playBtn);
 
 //-----------CONTAINER---------------------------
 let container = createCustomElement('container',"div");
+body.appendChild(container);
+container.style.display = "none";
 
 let header = createCustomElement('header','div');
 container.appendChild(header);
@@ -64,9 +66,10 @@ for(let i=1;i<=3;i++){
 
 //-------------PLAY-------------------------------
 playBtn.addEventListener('click',function(){
-    body.removeChild(wrapper);
-    body.appendChild(container);
+    wrapper.style.display="none";
+    container.style.display = "flex";
 
+    let c = 0;
     let sec = 10;
     timeDiv.innerText = sec;
     
@@ -191,10 +194,18 @@ playBtn.addEventListener('click',function(){
                         let lc = tower3.lastChild;
                         tower3.childNodes = null;
                         tower3.append(t);
+
                         t.style.marginBottom = "0px";
                         t=null;
                         tower3.append(fc);
                         tower3.append(lc);
+                        if(tower3.childElementCount === 3){
+                            setTimeout(()=>{
+                                alert("You WON!!");
+                                location.reload();
+                            },100)
+                            
+                        }
                     }else if(childrenNodes.length===1){
                         let fc = tower3.firstChild;
                         tower3.childNodes = null;
@@ -205,9 +216,11 @@ playBtn.addEventListener('click',function(){
                         fc=null;
                     }else{
                         tower3.appendChild(t);
+                        
                         t.style.marginBottom = "0px";
                         t=null
                     }
+
                 }else{
                     t.marginBottom = "0";
                     t=null;
