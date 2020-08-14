@@ -145,24 +145,27 @@ button:active,button:focus{
     margin-bottom: 2rem;
 }
 
-@media screen and (min-wdth: 700px){
-    html {
-        font-size: 12px;
-    }
 
-    .container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        max-width: fit-content;
-        height: fit-content;
-    }
+.container-l{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+    height: fit-content;
+}
 
-    .towers{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-    }
+.towers-l{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.tower-l{
+    height: 20rem;
+    width: 25rem;
+    margin: 1rem 2rem;
+    box-shadow: 5px 5px 9px rgba(0,0,0,0.4);
+    padding: 0;
 }

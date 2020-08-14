@@ -243,6 +243,25 @@ playBtn.addEventListener('click',function(){
         }
     });
 });
+
+window.addEventListener('resize',()=>{
+    if(window.innerWidth > 700){
+        container.classList.add('container-l');
+        towers.classList.add('towers-l');
+        tower1.classList.add('tower-l');
+        tower2.classList.add('tower-l');
+        tower3.classList.add('tower-l');
+    }
+    
+    if(window.innerWidth < 700){
+        container.classList.remove('container-l');
+        towers.classList.remove('towers-l');
+        tower1.classList.remove('tower-l');
+        tower2.classList.remove('tower-l');
+        tower3.classList.remove('tower-l');
+    }
+})
+
 //-------------UTILITIES------------------------
 function createCustomElement(className,type){
     let el = document.createElement(`${type}`);
