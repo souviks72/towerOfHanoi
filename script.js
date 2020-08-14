@@ -73,7 +73,7 @@ playBtn.addEventListener('click',function(){
     container.style.display = "flex";
 
     let c = 0;
-    let sec = 10;
+    let sec = 60;
     timeDiv.innerText = sec;
     
     let timerId = 
