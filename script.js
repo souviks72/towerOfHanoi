@@ -46,6 +46,9 @@ header.appendChild(res);
 let resetBtn = createCustomElement('reset','button');
 resetBtn.innerText = 'RESET';
 res.appendChild(resetBtn);
+resetBtn.addEventListener('click',function(){
+    location.reload();
+})
 let timeDiv = createCustomElement('time','div');
 timeDiv.innerText="TIME";
 header.appendChild(timeDiv);
