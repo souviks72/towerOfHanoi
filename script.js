@@ -78,9 +78,13 @@ playBtn.addEventListener('click',function(){
     
     let timerId = 
     setInterval(function(){
-        if(sec===1)
-            clearInterval(timerId);
         sec--;
+        if(sec===0){
+            clearInterval(timerId);
+            alert("You are out of time");
+            location.reload();
+        }
+            
         timeDiv.innerText = sec;
     },1000);
     
